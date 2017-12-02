@@ -10,111 +10,125 @@ namespace ujjatek
 {
     public class Funkciok
     {
-        public void JobbraLeptet(List<TextBlock> fieldek)
+        public void JobbraLeptet(TextBlock[,] fieldek)
         {
             int db = 0;
-            for (int i = 0; i < fieldek.Count(); i++)
+            for (int i = 0; i < fieldek.GetLength(0)-1; i++)
             {
-                if (fieldek[i].Text != "" && db < 1 && i != 5 && i != 11 && i != 17 && i != 23 && i != 29 && i != 35)
+                for (int j = 0; j < fieldek.GetLength(1); j++)
                 {
-                    if(fieldek[i + 1].Background != Brushes.Black)
+                    if (fieldek[i,j].Background == Brushes.Green && db < 1)
                     {
-                        fieldek[i + 1].Text = fieldek[i].Text;
-                        fieldek[i].Text = "";
-                        db++;
+
+                        if (fieldek[i + 1,j].Background != Brushes.Black)
+                        {
+                            fieldek[i + 1,j].Background = Brushes.Green;
+                            fieldek[i,j].Background = Brushes.LightGray;
+                            db++;
+                        }
                     }
                 }
             }
         }
 
-        public void BalraLeptet(List<TextBlock> fieldek)
+        public void BalraLeptet(TextBlock[,] fieldek)
         {
             int db = 0;
-            for (int i = 0; i < fieldek.Count(); i++)
+            for (int i = 1; i < fieldek.GetLength(0); i++)
             {
-                if (fieldek[i].Text != "" && db < 1 && i != 0 && i != 6 && i != 18 && i != 24 && i != 30)
+                for (int j = 0; j < fieldek.GetLength(1); j++)
                 {
-                    if (fieldek[i - 1].Background != Brushes.Black)
+                    if (fieldek[i, j].Background == Brushes.Green && db < 1)
                     {
-                        fieldek[i - 1].Text = fieldek[i].Text;
-                        fieldek[i].Text = "";
-                        db++;
-                    }    
+
+                        if (fieldek[i - 1, j].Background != Brushes.Black)
+                        {
+                            fieldek[i - 1, j].Background = Brushes.Green;
+                            fieldek[i, j].Background = Brushes.LightGray;
+                            db++;
+                        }
+                    }
                 }
             }
         }
 
-        public void FelLeptet(List<TextBlock> fieldek)
+        public void FelLeptet(TextBlock[,] fieldek)
         {
             int db = 0;
-            for (int i = 0; i < fieldek.Count(); i++)
+            for (int i = 0; i < fieldek.GetLength(0); i++)
             {
-                if (fieldek[i].Text != "" && db < 1 && i != 0 && i != 1 && i != 2 && i != 3 && i != 4 && i != 5)
+                for (int j = 1; j < fieldek.GetLength(1); j++)
                 {
-                    if (fieldek[i - 6].Background != Brushes.Black)
+                    if (fieldek[i, j].Background == Brushes.Green && db < 1)
                     {
-                        fieldek[i - 6].Text = fieldek[i].Text;
-                        fieldek[i].Text = "";
-                        db++;
-                    }  
+
+                        if (fieldek[i, j-1].Background != Brushes.Black)
+                        {
+                            fieldek[i, j-1].Background = Brushes.Green;
+                            fieldek[i, j].Background = Brushes.LightGray;
+                            db++;
+                        }
+                    }
                 }
             }
         }
 
-        public void LeLeptet(List<TextBlock> fieldek)
+        public void LeLeptet(TextBlock[,] fieldek)
         {
             int db = 0;
-            for (int i = 0; i < fieldek.Count(); i++)
+            for (int i = 0; i < fieldek.GetLength(0); i++)
             {
-                if (fieldek[i].Text != "" && db < 1 && i != 30 && i != 31 && i != 32 && i != 33 && i != 34 && i != 35)
+                for (int j = 0; j < fieldek.GetLength(1)-1; j++)
                 {
-                    if (fieldek[i + 6].Background != Brushes.Black)
+                    if (fieldek[i, j].Background == Brushes.Green && db < 1)
                     {
-                        fieldek[i + 6].Text = fieldek[i].Text;
-                        fieldek[i].Text = "";
-                        db++;
-                    }  
+
+                        if (fieldek[i, j + 1].Background != Brushes.Black)
+                        {
+                            fieldek[i, j + 1].Background = Brushes.Green;
+                            fieldek[i, j].Background = Brushes.LightGray;
+                            db++;
+                        }
+                    }
                 }
             }
         }
 
-        public void SetAkadalyok(List<TextBlock> fieldek)
+        public void SetAkadalyok(TextBlock[,] fieldek)
         {
-            fieldek[6].Background = Brushes.Black;
-            fieldek[7].Background = Brushes.Black;
-            fieldek[8].Background = Brushes.Black;
-            fieldek[9].Background = Brushes.Black;
-            fieldek[11].Background = Brushes.Black;
-            fieldek[18].Background = Brushes.Black;
-            fieldek[20].Background = Brushes.Black;
-            fieldek[21].Background = Brushes.Black;
-            fieldek[22].Background = Brushes.Black;
-            fieldek[23].Background = Brushes.Black;
-            fieldek[26].Background = Brushes.Black;
-            fieldek[30].Background = Brushes.Black;
-            fieldek[34].Background = Brushes.Black;
-            fieldek[35].Background = Brushes.Blue;
+            for (int i = 2; i < fieldek.GetLength(0); i+=3)
+            {
+                for (int j = 0; j < fieldek.GetLength(1); j+=4)
+                {
+                    fieldek[i,j].Background = Brushes.Black;
+                    
+                    fieldek[fieldek.GetLength(0) - 1, fieldek.GetLength(1) - 1].Background = Brushes.Blue;
+                }
+            }
             StartPoint(fieldek);
         }
 
-        public void StartPoint(List<TextBlock> fieldek)
+        public void StartPoint(TextBlock[,] fieldek)
         {
             
             bool isPlayer = false;
-            for (int i = 0; i < fieldek.Count; i++)
+            for (int i = 0; i < fieldek.GetLength(0); i++)
             {
-                if(fieldek[i].Text == "֍")
+                for (int j = 0; j < fieldek.GetLength(1); j++)
                 {
-                    isPlayer = true;
-                }
+                    if (fieldek[i,j].Background == Brushes.Green)
+                    {
+                        isPlayer = true;
+                    }
+                } 
             }
             if(isPlayer == false)
-                fieldek[0].Text = "֍";
+                fieldek[0, 0].Background = Brushes.Green;
         }
 
-        public bool Win(List<TextBlock> fieldek)
+        public bool Win(TextBlock[,] fieldek)
         {
-            if (fieldek[35].Text == "֍")
+            if (fieldek[fieldek.GetLength(0)-1, fieldek.GetLength(1)-1].Background == Brushes.Green)
                 return true;
             else
                 return false;

@@ -16,7 +16,6 @@ D:\c#\ujjatek\ujjatek\ujjatek\obj\Debug\ujjatek.pdb
 D:\dotNet\ujjatek\ujjatek\bin\Debug\ujjatek.exe.config
 D:\dotNet\ujjatek\ujjatek\bin\Debug\ujjatek.exe
 D:\dotNet\ujjatek\ujjatek\bin\Debug\ujjatek.pdb
-D:\dotNet\ujjatek\ujjatek\obj\Debug\ujjatek.csprojResolveAssemblyReference.cache
 D:\dotNet\ujjatek\ujjatek\obj\Debug\MainWindow.g.cs
 D:\dotNet\ujjatek\ujjatek\obj\Debug\App.g.cs
 D:\dotNet\ujjatek\ujjatek\obj\Debug\ujjatek_MarkupCompile.cache
@@ -43,3 +42,19 @@ D:\c#\ujjatek\02\jatekProjekt01\ujjatek\ujjatek\obj\Debug\ujjatek.csproj.Generat
 D:\c#\ujjatek\02\jatekProjekt01\ujjatek\ujjatek\obj\Debug\ujjatek.csproj.CoreCompileInputs.cache
 D:\c#\ujjatek\02\jatekProjekt01\ujjatek\ujjatek\obj\Debug\ujjatek.exe
 D:\c#\ujjatek\02\jatekProjekt01\ujjatek\ujjatek\obj\Debug\ujjatek.pdb
+D:\dotNet\ujjatek\ujjatek\obj\Debug\ujjatek.csprojResolveAssemblyReference.cache
+D:\c#\ujjatek\03\ujjatek\ujjatek\bin\Debug\ujjatek.exe.config
+D:\c#\ujjatek\03\ujjatek\ujjatek\bin\Debug\ujjatek.exe
+D:\c#\ujjatek\03\ujjatek\ujjatek\bin\Debug\ujjatek.pdb
+D:\c#\ujjatek\03\ujjatek\ujjatek\obj\Debug\ujjatek.csprojResolveAssemblyReference.cache
+D:\c#\ujjatek\03\ujjatek\ujjatek\obj\Debug\MainWindow.g.cs
+D:\c#\ujjatek\03\ujjatek\ujjatek\obj\Debug\App.g.cs
+D:\c#\ujjatek\03\ujjatek\ujjatek\obj\Debug\ujjatek_MarkupCompile.cache
+D:\c#\ujjatek\03\ujjatek\ujjatek\obj\Debug\ujjatek_MarkupCompile.lref
+D:\c#\ujjatek\03\ujjatek\ujjatek\obj\Debug\MainWindow.baml
+D:\c#\ujjatek\03\ujjatek\ujjatek\obj\Debug\ujjatek.g.resources
+D:\c#\ujjatek\03\ujjatek\ujjatek\obj\Debug\ujjatek.Properties.Resources.resources
+D:\c#\ujjatek\03\ujjatek\ujjatek\obj\Debug\ujjatek.csproj.GenerateResource.Cache
+D:\c#\ujjatek\03\ujjatek\ujjatek\obj\Debug\ujjatek.csproj.CoreCompileInputs.cache
+D:\c#\ujjatek\03\ujjatek\ujjatek\obj\Debug\ujjatek.exe
+D:\c#\ujjatek\03\ujjatek\ujjatek\obj\Debug\ujjatek.pdb
