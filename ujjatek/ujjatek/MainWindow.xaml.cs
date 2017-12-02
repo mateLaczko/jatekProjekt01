@@ -18,6 +18,8 @@ namespace ujjatek
     public partial class MainWindow : Window
     {
         TextBlock[,] fieldek = new TextBlock[12, 12];
+        public int stars = 0;
+        public int MovementCount = 0;
         
         public MainWindow()
         {
@@ -28,7 +30,6 @@ namespace ujjatek
         }
        
         public TextBlock[,] CreateFields(int x, int y)
-
         {
             SolidColorBrush brush = new SolidColorBrush(Color.FromRgb(180, 180, 180));
             TextBlock[,] textBlocks = new TextBlock[x, y];
@@ -52,6 +53,7 @@ namespace ujjatek
             }
             return textBlocks;
         }
+
         private void Window_KeyUp_1(object sender, KeyEventArgs e)
         {
             Funkciok OP = new Funkciok();
@@ -61,6 +63,8 @@ namespace ujjatek
                 return;
             }
 
+            MovementCount ++;
+
             if (e.Key == Key.Right)
                 OP.JobbraLeptet(fieldek);
             if (e.Key == Key.Left)
@@ -69,6 +73,14 @@ namespace ujjatek
                 OP.FelLeptet(fieldek);
             if (e.Key == Key.Down)
                 OP.LeLeptet(fieldek);
+
+            OP.Csapdak(fieldek, MovementCount);
+
+            if(OP.CollectYellows(fieldek) == 1)
+            {
+                stars++;
+                FeedBack.Text = $"{stars}";
+            }
 
             if (OP.Win(fieldek) == true)
             {
@@ -93,6 +105,7 @@ namespace ujjatek
             Funkciok OP = new Funkciok();
             OP.SetAkadalyok(fieldek);
             FeedBack.Text = "";
+            MovementCount = 0;
         }
     }
 }

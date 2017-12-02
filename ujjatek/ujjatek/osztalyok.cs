@@ -101,7 +101,8 @@ namespace ujjatek
                 for (int j = 0; j < fieldek.GetLength(1); j+=4)
                 {
                     fieldek[i,j].Background = Brushes.Black;
-                    
+                    fieldek[fieldek.GetLength(0) - 12, fieldek.GetLength(1) - 1].Background = Brushes.Yellow;
+                    fieldek[fieldek.GetLength(0) - 6, fieldek.GetLength(1) - 8].Background = Brushes.Yellow;
                     fieldek[fieldek.GetLength(0) - 1, fieldek.GetLength(1) - 1].Background = Brushes.Blue;
                 }
             }
@@ -133,6 +134,40 @@ namespace ujjatek
             else
                 return false;
                 
+        }
+
+        public int CollectYellows(TextBlock[,] fieldek)
+        {
+            if ((fieldek[fieldek.GetLength(0) - 12, fieldek.GetLength(1) - 1].Background == Brushes.LightGray && fieldek[fieldek.GetLength(0) - 6, fieldek.GetLength(1) - 8].Background == Brushes.LightGray))
+                return 0;
+
+            if (fieldek[fieldek.GetLength(0) - 12, fieldek.GetLength(1) - 1].Background == Brushes.Green)
+            {
+                return 1;
+            }
+            else if (fieldek[fieldek.GetLength(0) - 6, fieldek.GetLength(1) - 8].Background == Brushes.Green)
+            {
+                return 1;
+            }
+            else
+                return 0;
+        }
+
+        public void Csapdak(TextBlock[,] fieldek, int movementcount)
+        {
+            if(movementcount%3 == 0)
+            {
+                fieldek[fieldek.GetLength(0) - 2, fieldek.GetLength(1) - 1].Background = Brushes.Red;
+                fieldek[fieldek.GetLength(0) - 1, fieldek.GetLength(1) - 2].Background = Brushes.Red;
+            }
+            else
+            {
+                if(fieldek[fieldek.GetLength(0) - 2, fieldek.GetLength(1) - 1].Background != Brushes.Green && fieldek[fieldek.GetLength(0) - 1, fieldek.GetLength(1) - 2].Background != Brushes.Green)
+                {
+                    fieldek[fieldek.GetLength(0) - 2, fieldek.GetLength(1) - 1].Background = Brushes.LightGray;
+                    fieldek[fieldek.GetLength(0) - 1, fieldek.GetLength(1) - 2].Background = Brushes.LightGray;
+                }
+            }
         }
     }
 }
