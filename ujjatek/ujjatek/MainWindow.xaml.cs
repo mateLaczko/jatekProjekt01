@@ -108,6 +108,9 @@ namespace ujjatek
             OP.SetAkadalyok(fieldek);
             FeedBack.Text = "";
             MovementCount = 0;
+            countEgyik = 0;
+            countMasik = 0;
+            stars = 0;
         }
     }
 }
