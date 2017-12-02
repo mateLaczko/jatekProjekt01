@@ -15,15 +15,13 @@ using System.Windows.Shapes;
 
 namespace ujjatek
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
              
         }
+
         public List<TextBlock> GetFuckingFields()
         {
             List<TextBlock> fieldek = new List<TextBlock>();
@@ -65,9 +63,16 @@ namespace ujjatek
             fieldek.Add(field36);
             return fieldek;
         }
+
         private void Window_KeyUp_1(object sender, KeyEventArgs e)
         {
             Funkciok OP = new Funkciok();
+            if (OP.Win(GetFuckingFields()) == true)
+            {
+                FeedBack.Text = "Vége, nyertél!";
+                return;
+            }
+                
             if (e.Key == Key.Right)           
                 OP.JobbraLeptet(GetFuckingFields());          
             if (e.Key == Key.Left)
@@ -76,12 +81,20 @@ namespace ujjatek
                 OP.FelLeptet(GetFuckingFields());
             if (e.Key == Key.Down)
                 OP.LeLeptet(GetFuckingFields());
+
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
             Funkciok OP = new Funkciok();
+            if (OP.Win(GetFuckingFields()) == true)
+            {
+                FeedBack.Text = "Vége, nyertél!";
+                return;
+            }
+
             if (button.Name == "Up")
                 OP.FelLeptet(GetFuckingFields());
             if(button.Name == "Right")
@@ -90,6 +103,13 @@ namespace ujjatek
                 OP.LeLeptet(GetFuckingFields());
             if (button.Name == "Left")
                 OP.BalraLeptet(GetFuckingFields());
+        }
+
+        private void GameStartgeci_Click(object sender, RoutedEventArgs e)
+        {
+            Funkciok OP = new Funkciok();
+            OP.SetAkadalyok(GetFuckingFields());
+            FeedBack.Text = "";
         }
     }
 }
