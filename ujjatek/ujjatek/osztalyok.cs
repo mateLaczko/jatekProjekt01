@@ -136,17 +136,16 @@ namespace ujjatek
                 
         }
 
-        public int CollectYellows(TextBlock[,] fieldek)
+        public int CollectYellows(TextBlock[,] fieldek, ref int coountelso, ref int countmasodik)
         {
-            if ((fieldek[fieldek.GetLength(0) - 12, fieldek.GetLength(1) - 1].Background == Brushes.LightGray && fieldek[fieldek.GetLength(0) - 6, fieldek.GetLength(1) - 8].Background == Brushes.LightGray))
-                return 0;
-
-            if (fieldek[fieldek.GetLength(0) - 12, fieldek.GetLength(1) - 1].Background == Brushes.Green)
+            if (fieldek[fieldek.GetLength(0) - 12, fieldek.GetLength(1) - 1].Background == Brushes.Green && coountelso < 1)
             {
+                coountelso++;
                 return 1;
             }
-            else if (fieldek[fieldek.GetLength(0) - 6, fieldek.GetLength(1) - 8].Background == Brushes.Green)
+            else if (fieldek[fieldek.GetLength(0) - 6, fieldek.GetLength(1) - 8].Background == Brushes.Green && countmasodik < 1)
             {
+                countmasodik++;
                 return 1;
             }
             else

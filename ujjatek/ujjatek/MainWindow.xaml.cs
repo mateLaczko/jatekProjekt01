@@ -20,7 +20,9 @@ namespace ujjatek
         TextBlock[,] fieldek = new TextBlock[12, 12];
         public int stars = 0;
         public int MovementCount = 0;
-        
+        public int countEgyik = 0;
+        public int countMasik = 0;
+
         public MainWindow()
         {
             
@@ -76,7 +78,7 @@ namespace ujjatek
 
             OP.Csapdak(fieldek, MovementCount);
 
-            if(OP.CollectYellows(fieldek) == 1)
+            if(OP.CollectYellows(fieldek, ref countEgyik, ref countMasik) == 1)
             {
                 stars++;
                 FeedBack.Text = $"{stars}";
