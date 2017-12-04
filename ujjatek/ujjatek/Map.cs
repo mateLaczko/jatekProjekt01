@@ -16,6 +16,7 @@ namespace ujjatek
         public OnePoint WinPoint { get; set; }
         public List<OnePoint> Stars { get; set; }
         public int[] StarsCount { get; set; }
+        public int[] akadalyok { get; set; }
 
         //Konstruktor
         public Map(TextBlock[,] fieldek, OnePoint startpoint, OnePoint winpoint, OnePoint firstStar, OnePoint secondStar, OnePoint thirdStar)
@@ -28,6 +29,9 @@ namespace ujjatek
             Stars.Add(firstStar);
             Stars.Add(secondStar);
             Stars.Add(thirdStar);
+            akadalyok = new int[] { 0,2,0,4,0,6,0,8,0,9,0,10,0,11,1,2,1,6,2,1,2,2,2,4,2,6,2,8,2,9,2,10,3,4,3,10,4,0,4,1,4,2,4,3,4,
+                4,4,6,4,8,4,9,4,10,4,11,5,6,6,0,6,1,6,2,6,4,6,5,6,6,6,8,6,10,6,11,7,8,8,0,8,1,8,2,8,3,8,4,8,6,8,8,8,9,8,10,9,2,9,6,9,10,
+                10,0,10,2,10,3,10,4,10,6,10,7,10,8,10,10,11,0,11,10};
         }
 
         //Léptetések
@@ -115,6 +119,10 @@ namespace ujjatek
         //Pályaelemek elhelyezése
         public void MapBuilder()
         {
+            //StarsCount[0] = 0;
+            //StarsCount[1] = 0;
+            //StarsCount[2] = 0;
+
             SetBlackBlocks();
             SetStars();
             SetWinPoint();
@@ -122,67 +130,11 @@ namespace ujjatek
         }
         public void SetBlackBlocks()
         {
-            //Fieldek[0, 2].Background = Brushes.Black;
-            //Fieldek[0, 4].Background = Brushes.Black;
-            //Fieldek[0, 6].Background = Brushes.Black;
-            //Fieldek[0, 8].Background = Brushes.Black;
-            //Fieldek[0, 9].Background = Brushes.Black;
-            //Fieldek[0, 10].Background = Brushes.Black;
-            //Fieldek[0, 11].Background = Brushes.Black;
-            //Fieldek[1, 2].Background = Brushes.Black;
-            //Fieldek[1, 6].Background = Brushes.Black;
-            //Fieldek[2, 1].Background = Brushes.Black;
-            //Fieldek[2, 2].Background = Brushes.Black;
-            //Fieldek[2, 4].Background = Brushes.Black;
-            //Fieldek[2, 6].Background = Brushes.Black;
-            //Fieldek[2, 8].Background = Brushes.Black;
-            //Fieldek[2, 9].Background = Brushes.Black;
-            //Fieldek[2, 10].Background = Brushes.Black;
-            //Fieldek[3, 4].Background = Brushes.Black;
-            //Fieldek[3, 10].Background = Brushes.Black;
-            //Fieldek[4, 0].Background = Brushes.Black;
-            //Fieldek[4, 1].Background = Brushes.Black;
-            //Fieldek[4, 2].Background = Brushes.Black;
-            //Fieldek[4, 3].Background = Brushes.Black;
-            //Fieldek[4, 4].Background = Brushes.Black;
-            //Fieldek[4, 6].Background = Brushes.Black;
-            //Fieldek[4, 8].Background = Brushes.Black;
-            //Fieldek[4, 9].Background = Brushes.Black;
-            //Fieldek[4, 10].Background = Brushes.Black;
-            //Fieldek[4, 11].Background = Brushes.Black;
-            //Fieldek[5, 6].Background = Brushes.Black;
-            //Fieldek[6, 0].Background = Brushes.Black;
-            //Fieldek[6, 1].Background = Brushes.Black;
-            //Fieldek[6, 2].Background = Brushes.Black;
-            //Fieldek[6, 4].Background = Brushes.Black;
-            //Fieldek[6, 5].Background = Brushes.Black;
-            //Fieldek[6, 6].Background = Brushes.Black;
-            //Fieldek[6, 8].Background = Brushes.Black;
-            //Fieldek[6, 10].Background = Brushes.Black;
-            //Fieldek[6, 11].Background = Brushes.Black;
-            //Fieldek[7, 8].Background = Brushes.Black;
-            //Fieldek[8, 0].Background = Brushes.Black;
-            //Fieldek[8, 1].Background = Brushes.Black;
-            //Fieldek[8, 2].Background = Brushes.Black;
-            //Fieldek[8, 3].Background = Brushes.Black;
-            //Fieldek[8, 4].Background = Brushes.Black;
-            //Fieldek[8, 6].Background = Brushes.Black;
-            //Fieldek[8, 8].Background = Brushes.Black;
-            //Fieldek[8, 9].Background = Brushes.Black;
-            //Fieldek[8, 10].Background = Brushes.Black;
-            //Fieldek[9, 2].Background = Brushes.Black;
-            //Fieldek[9, 6].Background = Brushes.Black;
-            //Fieldek[9, 10].Background = Brushes.Black;
-            //Fieldek[10, 0].Background = Brushes.Black;
-            //Fieldek[10, 2].Background = Brushes.Black;
-            //Fieldek[10, 3].Background = Brushes.Black;
-            //Fieldek[10, 4].Background = Brushes.Black;
-            //Fieldek[10, 6].Background = Brushes.Black;
-            //Fieldek[10, 7].Background = Brushes.Black;
-            //Fieldek[10, 8].Background = Brushes.Black;
-            //Fieldek[10, 10].Background = Brushes.Black;
-            //Fieldek[11, 0].Background = Brushes.Black;
-            //Fieldek[11, 10].Background = Brushes.Black;
+            for (int i = 0; i < akadalyok.Length; i+=2)
+            {
+                Fieldek[akadalyok[i], akadalyok[i + 1]].Background = Brushes.Black;
+
+            }
         }
         public void SetStars()
         {

@@ -26,7 +26,6 @@ namespace ujjatek
             
             InitializeComponent();
             Palya.Fieldek = CreateFields(12, 12);
-
         }
        
         public TextBlock[,] CreateFields(int x, int y)
